@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,30 +8,47 @@
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-    <nav id="navbar">welcome to the snake game </nav>
+    <nav id="navbar">Welcome to the Snake Game!</nav>
 
-<div id="gameContainer">
-    <div class="gamepay">   
-        <div id="gameBoard"></div>
-        <div id="score">0</div>
-        <button id="resetBtn">Reset</button>
+    <!-- Main container that holds the game, info text and stats side by side -->
+    <div id="gameContainer">
+
+        <!-- Middle section: gameplay area (board + score + reset button) -->
+        <div class="gamepay">
+            <div id="gameArea">
+                <!-- The grid for the snake game is drawn inside this div with JavaScript -->
+                <div id="gameBoard"></div>
+
+                <!-- Messages "Game Over!" will be shown here -->
+                <div id="gameMessage"></div>
+            </div>
+
+            <!-- Current score is shown here and updated by JavaScript -->
+            <div id="score">0</div>
+
+            <!-- Button to restart the game -->
+            <button id="resetBtn">Reset</button>
+        </div>
+
+
+        <div id="info">
+            How to play.
+            <p>
+                To play the classic "Snake" game, use the arrow keys (↑, ↓, ←, →) 
+                on your keyboard to guide the snake to eat food without hitting 
+                its own body. Each time the snake eats food, it gets longer, 
+                and the goal is to grow as large as possible.
+            </p>
+        </div>
+
+        <!-- Right side: stats about the games played -->
+        <div id="stats">
+            <h1>Stats</h1>
+            <div id="gamesPlayed">Games Played: 0</div>
+            <div id="lastScore">Last Score: 0</div>
+            <div id="biggestScore">Biggest Score: 0</div>
+        </div>
     </div>
-
-    <div id= "info">
-        How to play.
-        <p>To play the classic "Snake" game, use arrow keys to guide a snake to eat food without hitting its own body. Each time the snake eats food, it gets longer, and the goal is to grow as large as possible before the game ends</p>
-    </div>
-
-    <div id="stats">
-        <h1>Stats</h1>
-<div id="gamesPlayed">Games Played: 0</div>
-<div id="lastScore">Last Score: 0</div>
-<div id="biggestScore">Biggest Score: 0</div>
-
-    </div>
-</div>    
-<div id="gameMessage"></div>
-
-<script src="script/script.js"></script>
+    <script src="script/script.js"></script>
 </body>
 </html>

@@ -1,14 +1,15 @@
+/* Main container that holds info, gameplay, and stats in a grid layout */
 #gameContainer{
     text-align: center;
+    position: relative;
     display: grid;
     grid-template-areas: 
     "info gameplay stats";
     grid-template-columns: 1fr auto 1fr;
 }
 
-.gameplay{
-    grid-area: gameplay;
-}
+
+/* The square game board where the snake moves */
 #gameBoard{
     border: 3px solid;
     color: #06481f;
@@ -16,17 +17,29 @@
     height: 500px;
     width: 500px;
     display: grid;
+    /* 25 columns to match boardSize in JavaScript */
     grid-template-columns: repeat(25, 20px);
-  
-    
 }
 
+/* Message shown on top of the game board  "Game Over" */
+#gameMessage{
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Permanent Marker", cursive;
+    font-size: 40px;
+    color: red;
+}
+
+/* Current score styling */
 #score{
     font-family: "permanent Marker", cursive;
     font-size: 3em;
     color: #fefefe;
 }
 
+/* Reset button styling */
 #resetBtn{
     font-family: "permanent Marker", cursive;
     font-size: 2em;
@@ -38,35 +51,33 @@
     cursor: pointer;
     color: #fefefe;
     background-color: black;
-    transition: 0.3ms ease;
-   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-    
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 }
- #resetBtn:hover {
+
+/* Hover effect for the reset button */
+#resetBtn:hover {
     background-color: #06481f;
-    transform: scale(1.1);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 }
 
+/* Top navigation bar / title style */
 #navbar{
     text-align: center;
     padding-bottom: 20px;
     font-size: 2em;
     font-family: "permanent Marker", cursive;
     color: #fefefe;
- 
-    
 }
 
+/* Body styling: center everything and use a black background */
 body{
-display:flex;
-flex-direction: column;
-align-items: center;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+}
 
-background-color: black;
-} 
-
-
+/* Left info panel: title + instructions text */
 #info{
     grid-area: info;
     color: green;
@@ -75,31 +86,36 @@ background-color: black;
     padding-top: 1em;
     text-align: left;
     font-family: "permanent Marker", cursive;
-
 }
+
+/* Paragraph text inside the info panel */
 #info p {
     font-size: 0.5em;
     color: white;
-    
     font-family: "permanent Marker", cursive;
 }
 
+/* Right stats panel showing game stats */
 #stats{
     grid-area: stats;
     color: #fefefe;
     font-size: 1.5em;
     font-family: "permanent Marker", cursive;
-
 }
+
+/* Heading inside the stats panel */
 #stats h1{
     color: green;
     font-size: 2em;
     font-family: "permanent Marker", cursive;
-
 }
+
+/* Snake cells on the board (green blocks) */
 .snake{
     background-color: rgb(0, 255, 68);
 }
+
+/* Food cell on the board (red block) */
 .food{
     background-color: red;
 }
